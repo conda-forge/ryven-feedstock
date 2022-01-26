@@ -10,7 +10,7 @@ source:
   sha256: 82ef851e5bf01a330122947d062ca39d9bf50c29d456a8d54547fd7c553899bf
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - ryven = ryven:run_ryven
