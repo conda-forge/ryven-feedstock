@@ -10,7 +10,7 @@ source:
   sha256: 82ef851e5bf01a330122947d062ca39d9bf50c29d456a8d54547fd7c553899bf
 
 build:
-  number: 2
+  number: 3
   noarch: python
   entry_points:
     - ryven = ryven:run_ryven
@@ -27,16 +27,13 @@ requirements:
     - python >3.6,<3.10
     - ryvencore ==0.3.1.*
     - ryvencore-qt ==0.3.1.*
+    - pyside2 ==5.12.4
     - textdistance
 
 test:
   imports:
     - ryven
     - ryven.gui
-  commands:
-    - pip check
-  requires:
-    - pip
 
 about:
   home: https://github.com/leon-thomm/Ryven
