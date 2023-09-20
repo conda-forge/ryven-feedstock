@@ -20,15 +20,15 @@ build:
 requirements:
   host:
     - pip
-    - python >3.6,<3.10
+    - python >3.6,<=3.10
   run:
     - jinja2
     - pygments
-    - python >3.6,<3.10
-    - ryvencore ==0.3.1.*
-    - ryvencore-qt ==0.3.1.*
-    - pyside2 ==5.12.4
+    - python >3.6,!=3.10
+    - ryvencore ==0.4.*
+    - ryvencore-qt ==0.4.*
     - textdistance
+    - packaging
 
 test:
   imports:
