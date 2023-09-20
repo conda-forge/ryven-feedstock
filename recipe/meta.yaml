@@ -1,5 +1,5 @@
 {% set name = "ryven" %}
-{% set version = "3.1.1" %}
+{% set version = "3.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ryven-{{ version }}.tar.gz
-  sha256: 82ef851e5bf01a330122947d062ca39d9bf50c29d456a8d54547fd7c553899bf
+  sha256: 8cc310f3ade0162da9d842437e3da59c02342df8257c9c873862354948a12900
 
 build:
-  number: 3
+  number: 0
   noarch: python
   entry_points:
     - ryven = ryven:run_ryven
