@@ -1,0 +1,57 @@
+schema_version: 1
+
+context:
+  name: ryven
+  version: "3.5.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/ryven-${{ version }}.tar.gz
+  sha256: 7e2e47ba3e4d06b2cd961a89655dd314fe97576b487acaba57540bd7b57da5fd
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - ryven = ryven:run_ryven
+      - ryven_console = ryven:run_ryven_console
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+  run:
+    - jinja2
+    - pygments
+    - python >=${{ python_min }}
+    - ryvencore ==0.4
+    - ryvencore-qt ==0.4
+    - textdistance
+    - packaging
+
+tests:
+  - python:
+      imports:
+        - ryven
+        - ryven.gui
+      pip_check: false
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  summary: Flow-based visual scripting for Python
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/leon-thomm/Ryven
+
+extra:
+  recipe-maintainers:
+    - leon-thomm
+    - jan-janssen
