@@ -41,7 +41,10 @@ tests:
         - ryven
         - ryven.gui
       pip_check: false
-      python_version: ${{ python_min }}
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
 about:
   summary: Flow-based visual scripting for Python
   license: MIT
